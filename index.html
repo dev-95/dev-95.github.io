@@ -883,7 +883,7 @@
       border-color: #2b3b2e;
     }
     .trust-strip::before {
-      content: "ENVIRONMENT / PRODUCTION-READY";
+      content: "AVAILABILITY";
       position: absolute;
       left: 0;
       top: 0;
@@ -1245,7 +1245,7 @@
       </div>
       <div class="linux-terminal">
         <p class="linux-system">Ubuntu 24.04 LTS · tty1 · portfolio session</p>
-        <p class="intro-hint">Press <kbd>Enter</kbd> or <kbd>Esc</kbd> to skip</p>
+        <p class="intro-hint">Tap anywhere or press <kbd>Enter</kbd> to skip</p>
         <p class="sr-only">Devesh Chowdary Chalasani is a Cloud, DevOps, and Site Reliability engineer focused on Azure, AWS, Terraform, containers, automation, observability, and reliable delivery. He is based in Mississauga and open to roles across Canada.</p>
         <div class="boot-output" id="boot-output" aria-hidden="true"></div>
         <div class="boot-footer" aria-hidden="true">
@@ -1280,6 +1280,7 @@
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="button secondary" href="#contact">Get in touch</a>
+          <a class="button secondary" href="Devesh_Chalasani_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
         <div class="hero-proof" aria-label="Project proof points">
           <div class="proof-point"><strong>3 regions</strong><span>One Terraform pattern</span></div>
@@ -1345,7 +1346,7 @@
           <aside class="project-meta">
             <dl>
               <div><dt>Scope</dt><dd>End-to-end DevOps lifecycle</dd></div>
-              <div><dt>Evidence</dt><dd>Public repository · 22 commits</dd></div>
+              <div><dt>Evidence</dt><dd>Public repository · CI/CD + IaC</dd></div>
               <div><dt>Focus</dt><dd>Delivery, resilience, observability</dd></div>
             </dl>
             <a class="project-link" href="https://github.com/dev-95/multi-market-etf-tracker-cloud-native-devops-showcase" target="_blank" rel="noreferrer">Review repository
@@ -1428,9 +1429,9 @@
           <p><strong>Core thread:</strong> provision predictably, keep access controlled, automate the path to deployment, then make the running system understandable.</p>
         </aside>
         <div class="skill-rows">
-          <div class="skill-row"><h3>Cloud &amp; identity</h3><p>Azure, AWS, Entra ID, IAM, RBAC, VNet / VPC, Key Vault, CloudWatch</p></div>
+          <div class="skill-row"><h3>Cloud &amp; identity</h3><p>Azure, AWS, Entra ID, IAM, RBAC, VNet, CloudWatch</p></div>
           <div class="skill-row"><h3>Infrastructure</h3><p>Terraform, Ansible, Linux / Ubuntu, Bash, PowerShell</p></div>
-          <div class="skill-row"><h3>Containers</h3><p>Docker, Kubernetes, Helm, AKS</p></div>
+          <div class="skill-row"><h3>Containers</h3><p>Docker, Kubernetes, Helm</p></div>
           <div class="skill-row"><h3>Delivery</h3><p>GitHub Actions, Azure DevOps, GitLab CI, Jenkins, Argo CD, Flux CD</p></div>
           <div class="skill-row"><h3>Observability</h3><p>Prometheus, Grafana, Splunk, ELK Stack, Dynatrace</p></div>
           <div class="skill-row"><h3>Automation</h3><p>Python, Bash, PowerShell, Git</p></div>
@@ -1481,8 +1482,11 @@
         <a class="button secondary" href="https://linkedin.com/in/devesh-chalasani" target="_blank" rel="noreferrer" aria-label="View Devesh's LinkedIn profile" title="LinkedIn">
           <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.35 7.9H1.7V19.6h3.65V7.9ZM3.53 2.08a2.12 2.12 0 1 0 0 4.24 2.12 2.12 0 0 0 0-4.24ZM12.17 7.9H8.68V19.6h3.64v-5.79c0-1.53.29-3.01 2.19-3.01 1.87 0 1.89 1.75 1.89 3.11v5.69h3.65v-6.41c0-3.15-.68-5.58-4.36-5.58-1.76 0-2.95.97-3.43 1.89h-.05V7.9h-.04Z"/></svg>
         </a>
+        <a class="button secondary" href="Devesh_Chalasani_Resume.pdf" target="_blank" rel="noopener" aria-label="Open Devesh's resume (PDF)" title="Resume">
+          <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        </a>
       </div>
-      <p class="contact-note">Open work permit · No employer sponsorship required · Open to relocation</p>
+      <p class="contact-note">deveshchalasaniin@gmail.com · Open work permit · No employer sponsorship required · Open to relocation</p>
     </section>
 
     <footer>
@@ -1501,16 +1505,10 @@
       var closed = false;
       var timers = [];
       var lines = [
-        { prefix: 'devesh@linux:~$ ', value: 'hostnamectl --static', valueClass: 'boot-command' },
-        { prefix: '', value: 'devesh-cloud-devops', valueClass: 'boot-greeting' },
         { prefix: 'devesh@linux:~$ ', value: 'cat ~/profile.conf', valueClass: 'boot-command' },
-        { prefix: '', value: 'NAME="Devesh Chowdary Chalasani"', valueClass: '' },
         { prefix: '', value: 'ROLE="Cloud / DevOps / SRE Engineer"', valueClass: '' },
-        { prefix: '', value: 'STACK="Azure · AWS · Terraform · Docker · Kubernetes"', valueClass: 'boot-success' },
-        { prefix: '', value: 'FOCUS="Automation · Observability · Reliability"', valueClass: 'boot-success' },
-        { prefix: '', value: 'STATUS="Open to roles across Canada · No sponsorship required"', valueClass: '' },
-        { prefix: 'devesh@linux:~$ ', value: './open-portfolio.sh', valueClass: 'boot-command' },
-        { prefix: '', value: '[  OK  ] Profile loaded. Opening portfolio...', valueClass: 'boot-greeting' }
+        { prefix: '', value: 'STACK="Azure · AWS · Terraform · Kubernetes"', valueClass: 'boot-success' },
+        { prefix: '', value: '[  OK  ] Opening portfolio...', valueClass: 'boot-greeting' }
       ];
 
       function later(fn, delay) {
@@ -1548,7 +1546,7 @@
           cursor.remove();
           progress.style.width = Math.round(((index + 1) / lines.length) * 100) + '%';
           status.textContent = index < lines.length - 1 ? 'Running startup script' : 'Session ready';
-          later(function () { renderLine(index + 1, instant); }, instant ? 40 : 300);
+          later(function () { renderLine(index + 1, instant); }, instant ? 40 : 150);
         }
 
         if (instant) {
@@ -1563,7 +1561,7 @@
           value.textContent = item.value.slice(0, character + 1);
           character += 1;
           if (character < item.value.length) {
-            later(typeNext, item.prefix ? 34 : 24);
+            later(typeNext, item.prefix ? 20 : 10);
           } else {
             complete();
           }
@@ -1572,7 +1570,7 @@
       }
 
       function finishSequence() {
-        later(closeIntro, reduceMotion ? 550 : 720);
+        later(closeIntro, reduceMotion ? 300 : 400);
       }
 
       function closeIntro() {
@@ -1590,7 +1588,13 @@
       document.addEventListener('keydown', function (event) {
         if (!closed && (event.key === 'Escape' || event.key === 'Enter')) closeIntro();
       });
-      renderLine(0, reduceMotion);
+      intro.addEventListener('click', closeIntro);
+      var seen = false;
+      try {
+        seen = sessionStorage.getItem('introSeen') === '1';
+        sessionStorage.setItem('introSeen', '1');
+      } catch (e) {}
+      if (seen) { later(closeIntro, 0); } else { renderLine(0, reduceMotion); }
     })();
 
     (function () {

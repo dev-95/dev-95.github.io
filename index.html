@@ -353,9 +353,13 @@
     .contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
     .contact-icon {
       flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      margin-right: .6rem;
+      width: 20px;
+      height: 20px;
+    }
+    .contact-actions .button {
+      width: 48px;
+      min-height: 48px;
+      padding: 0;
     }
     .contact .button { background: #dff8f2; color: #0b1d1a; border-color: #dff8f2; }
     .contact .button:hover, .contact .button:focus-visible { background: #84d9ca; border-color: #84d9ca; }
@@ -831,8 +835,8 @@
       font-size: clamp(3.65rem, 7.1vw, 7.25rem);
       letter-spacing: -.07em;
     }
-    .accent-word { color: #ffad56; }
-    .accent-word::after { background: rgba(255,173,86,.72); }
+    .accent-word { color: #70dc88; }
+    .accent-word::after { background: rgba(112,220,136,.72); }
     .hero-copy { color: #b4c2b7; }
     .hero-copy strong { color: #f4fbf5; }
     .hero .button {
@@ -1453,17 +1457,14 @@
       <h2 id="contact-title">Need an engineer who automates before firefighting?</h2>
       <p>I am considering full-time Cloud Engineering, DevOps, Site Reliability, and Platform Engineering opportunities across Canada.</p>
       <div class="contact-actions">
-        <a class="button" href="mailto:deveshchalasaniin@gmail.com" aria-label="Email Devesh at deveshchalasaniin@gmail.com">
+        <a class="button" href="mailto:deveshchalasaniin@gmail.com" aria-label="Email Devesh at deveshchalasaniin@gmail.com" title="Email Devesh">
           <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
-          Email me
         </a>
-        <a class="button secondary" href="https://github.com/dev-95" target="_blank" rel="noreferrer" aria-label="View Devesh's GitHub profile">
+        <a class="button secondary" href="https://github.com/dev-95" target="_blank" rel="noreferrer" aria-label="View Devesh's GitHub profile" title="GitHub">
           <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.39.97.1-.75.4-1.27.74-1.56-2.58-.29-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.93 10.93 0 0 1 12 6.09c.98 0 1.95.13 2.87.39 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.72 5.39-5.3 5.68.42.36.79 1.07.79 2.16v3.25c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
-          GitHub
         </a>
-        <a class="button secondary" href="https://linkedin.com/in/devesh-chalasani" target="_blank" rel="noreferrer" aria-label="View Devesh's LinkedIn profile">
+        <a class="button secondary" href="https://linkedin.com/in/devesh-chalasani" target="_blank" rel="noreferrer" aria-label="View Devesh's LinkedIn profile" title="LinkedIn">
           <svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.35 7.9H1.7V19.6h3.65V7.9ZM3.53 2.08a2.12 2.12 0 1 0 0 4.24 2.12 2.12 0 0 0 0-4.24ZM12.17 7.9H8.68V19.6h3.64v-5.79c0-1.53.29-3.01 2.19-3.01 1.87 0 1.89 1.75 1.89 3.11v5.69h3.65v-6.41c0-3.15-.68-5.58-4.36-5.58-1.76 0-2.95.97-3.43 1.89h-.05V7.9h-.04Z"/></svg>
-          LinkedIn
         </a>
       </div>
       <p class="contact-note">Open work permit · No employer sponsorship required · Open to relocation</p>

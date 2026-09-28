@@ -13,21 +13,21 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #f4f7f7;
-      --surface: #ffffff;
-      --surface-2: #e9f0ef;
-      --ink: #122322;
-      --muted: #536966;
-      --line: #c9d7d5;
-      --accent: #007f74;
-      --accent-strong: #005c54;
-      --accent-soft: #d7eeea;
-      --signal: #d26a2e;
-      --signal-soft: #f7e2d4;
-      --terminal: #102421;
-      --terminal-ink: #d9f3ec;
-      --terminal-muted: #81ada4;
-      --shadow: 0 18px 50px rgba(17, 53, 48, .09);
+      --bg: #edf1eb;
+      --surface: #f9fbf7;
+      --surface-2: #dfe7dd;
+      --ink: #101713;
+      --muted: #58655b;
+      --line: #bdc8be;
+      --accent: #16853f;
+      --accent-strong: #075f2b;
+      --accent-soft: #d5eddc;
+      --signal: #e77d22;
+      --signal-soft: #f6dfcc;
+      --terminal: #080d0a;
+      --terminal-ink: #eaf5ec;
+      --terminal-muted: #91a598;
+      --shadow: 0 22px 55px rgba(21, 38, 27, .12);
       --radius-lg: 28px;
       --radius-md: 16px;
       --radius-sm: 9px;
@@ -35,21 +35,21 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0b1413;
-        --surface: #111f1d;
-        --surface-2: #182a27;
-        --ink: #ecf7f4;
-        --muted: #adc0bc;
-        --line: #2b433f;
-        --accent: #58cbbb;
-        --accent-strong: #8ce0d2;
-        --accent-soft: #153c36;
-        --signal: #ff9b5f;
-        --signal-soft: #3a261d;
-        --terminal: #07100f;
-        --terminal-ink: #ddf8f1;
-        --terminal-muted: #81ada4;
-        --shadow: 0 22px 58px rgba(0, 0, 0, .28);
+        --bg: #070b08;
+        --surface: #0f1711;
+        --surface-2: #18231a;
+        --ink: #edf6ee;
+        --muted: #a8b7ab;
+        --line: #2c3c2f;
+        --accent: #70dc88;
+        --accent-strong: #a7efb7;
+        --accent-soft: #14331c;
+        --signal: #ffad56;
+        --signal-soft: #3b2917;
+        --terminal: #040705;
+        --terminal-ink: #eef9ef;
+        --terminal-muted: #91a598;
+        --shadow: 0 24px 64px rgba(0, 0, 0, .36);
       }
     }
 
@@ -796,6 +796,298 @@
       .credential { min-height: 190px; }
     }
 
+    /* Portfolio polish: command-line precision with a sharper recruiter scan path */
+    body {
+      background-image: linear-gradient(90deg, color-mix(in srgb, var(--line) 22%, transparent) 1px, transparent 1px);
+      background-size: min(7vw, 88px) 100%;
+    }
+    .nav-shell {
+      background: color-mix(in srgb, var(--terminal) 94%, transparent);
+      border-bottom: 1px solid #26352a;
+    }
+    nav { min-height: 58px; }
+    .nav-status { color: #aec0b2; }
+    .nav-links a { color: #91a598; }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: #f3fbf4; background: #172119; }
+    .status-dot { background: #70dc88; }
+
+    .hero {
+      min-height: min(880px, calc(100svh - 58px));
+      padding-top: clamp(4.5rem, 8vw, 7.5rem);
+      padding-bottom: clamp(4.5rem, 8vw, 7rem);
+      grid-template-columns: minmax(0, 1.42fr) minmax(340px, .58fr);
+      background: #080d0a;
+    }
+    .hero::before {
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(112,220,136,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(112,220,136,.18) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .hero::after {
+      width: min(36vw, 520px);
+      right: -8%;
+      bottom: -44%;
+      border-color: rgba(255,173,86,.18);
+      border-radius: 0;
+      transform: rotate(22deg);
+    }
+    .identity { color: #a7efb7; }
+    .identity::before { background: #ffad56; }
+    h1 {
+      max-width: 900px;
+      font-size: clamp(3.65rem, 7.1vw, 7.25rem);
+      letter-spacing: -.07em;
+    }
+    .accent-word { color: #ffad56; }
+    .accent-word::after { background: rgba(255,173,86,.72); }
+    .hero-copy { color: #b4c2b7; }
+    .hero-copy strong { color: #f4fbf5; }
+    .hero .button {
+      background: #70dc88;
+      border-color: #70dc88;
+      color: #071008;
+      border-radius: 2px;
+    }
+    .hero .button:hover,
+    .hero .button:focus-visible { background: #a7efb7; border-color: #a7efb7; }
+    .hero .button.secondary { color: #edf6ee; border-color: #46564a; }
+    .hero .button.secondary:hover,
+    .hero .button.secondary:focus-visible { background: #172119; border-color: #70dc88; }
+    .hero-proof {
+      max-width: 760px;
+      border-color: #314235;
+    }
+    .proof-point + .proof-point { border-color: #314235; }
+    .proof-point strong { color: #f4fbf5; }
+    .proof-point span { color: #91a598; }
+    .console {
+      border-color: #415746;
+      box-shadow: 18px 18px 0 rgba(255,173,86,.14), 36px 36px 0 rgba(112,220,136,.05);
+      transform: translateY(1rem);
+    }
+    .console::after { background: #ffad56; }
+    .console-bar { background: #0c130e; border-color: #304033; }
+    .console pre::after { background: #70dc88; }
+    .prompt { color: #70dc88; }
+    .key { color: #ffbd7d; }
+    .ok { color: #a7efb7; }
+
+    .trust-strip {
+      position: relative;
+      margin-top: 0;
+      color: #eaf5ec;
+      background: #101712;
+      border-color: #2b3b2e;
+    }
+    .trust-strip::before {
+      content: "ENVIRONMENT / PRODUCTION-READY";
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: .34rem .7rem;
+      color: #101713;
+      background: #70dc88;
+      font: 700 .6rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .08em;
+    }
+    .trust-item { padding-top: 2rem; }
+    .trust-item + .trust-item { border-color: #2b3b2e; }
+    .trust-item span { color: #91a598; }
+    .trust-item strong { color: #eff8f0; }
+
+    .operating-loop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .loop-step {
+      position: relative;
+      min-height: 118px;
+      padding: 1.2rem;
+    }
+    .loop-step + .loop-step { border-left: 1px solid var(--line); }
+    .loop-step::after {
+      content: "→";
+      position: absolute;
+      right: -.55rem;
+      top: 50%;
+      z-index: 2;
+      width: 1.1rem;
+      height: 1.1rem;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      color: var(--accent-strong);
+      background: var(--bg);
+      font: 700 .8rem/1 "IBM Plex Mono", monospace;
+    }
+    .loop-step:last-child::after { display: none; }
+    .loop-step span {
+      color: var(--signal);
+      font: 600 .68rem/1 "IBM Plex Mono", monospace;
+    }
+    .loop-step strong {
+      display: block;
+      margin-top: 1.1rem;
+      font-size: 1.03rem;
+      letter-spacing: -.015em;
+    }
+    .loop-step small {
+      display: block;
+      margin-top: .3rem;
+      color: var(--muted);
+      font: 500 .68rem/1.45 "IBM Plex Mono", monospace;
+    }
+
+    section { padding: clamp(5.5rem, 10vw, 9rem) 0; }
+    .section-head {
+      grid-template-columns: 190px minmax(0, 1fr);
+      margin-bottom: clamp(2.2rem, 5vw, 4.25rem);
+    }
+    .section-index { color: var(--accent-strong); }
+    .section-index::before { width: 36px; background: var(--signal); }
+    .section-head h2 { max-width: 900px; line-height: .98; }
+    .section-head p { margin-top: 1.25rem; }
+
+    .project-list { position: relative; }
+    .project {
+      grid-template-columns: 82px minmax(0, 1fr) minmax(275px, .62fr);
+      gap: clamp(1.25rem, 3.5vw, 3.2rem);
+      margin-bottom: 1rem;
+      padding: clamp(1.8rem, 3.6vw, 3rem);
+      box-shadow: 7px 7px 0 color-mix(in srgb, var(--line) 36%, transparent);
+    }
+    .project::before { width: 6px; }
+    .project:nth-child(2n)::before { background: var(--signal); }
+    .project-number {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      color: var(--accent-strong);
+      font-size: 1.15rem;
+    }
+    .project-number::after {
+      content: "RUN";
+      color: var(--muted);
+      font: 600 .6rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .12em;
+    }
+    .project-kicker {
+      display: block;
+      margin-bottom: .65rem;
+      color: var(--signal);
+      font: 600 .66rem/1.25 "IBM Plex Mono", monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .project h3 { max-width: 650px; }
+    .project p { line-height: 1.65; }
+    .project-meta { background: var(--surface-2); border: 0; }
+    .project-meta div + div { border-color: color-mix(in srgb, var(--line) 75%, transparent); }
+    .project-link { margin-top: .45rem; }
+
+    .skills-layout { grid-template-columns: minmax(270px, .55fr) minmax(0, 1.45fr); }
+    .skills-note {
+      padding: 1.8rem;
+      border-top: 0;
+      border-left: 5px solid var(--signal);
+      background: var(--terminal);
+      color: var(--terminal-ink);
+    }
+    .skills-note p { font-size: 1.12rem; line-height: 1.6; }
+    .skills-note strong { color: #a7efb7; }
+    .skills-note::after {
+      content: "$ build → ship → observe";
+      display: block;
+      margin-top: 1.5rem;
+      color: #91a598;
+      font: 500 .68rem/1.4 "IBM Plex Mono", monospace;
+    }
+    .skill-row {
+      grid-template-columns: minmax(135px, .38fr) 1fr;
+      padding: 1.45rem 0;
+    }
+    .skill-row h3 { color: var(--accent-strong); }
+    .skill-row p { line-height: 1.5; }
+
+    .credentials { background: var(--surface); box-shadow: 8px 8px 0 color-mix(in srgb, var(--line) 38%, transparent); }
+    .credential { min-height: 250px; padding: 1.55rem; }
+    .credential::after { background: var(--accent); }
+    .credential:nth-child(2n)::after { background: var(--signal); }
+    .credential .issuer { max-width: 70%; }
+    .credential h3 { margin-top: 1.5rem; font-size: 1.18rem; }
+
+    .story-grid > p {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .story-grid > p::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .18em;
+      bottom: .18em;
+      width: 5px;
+      background: var(--accent);
+    }
+    .edu-item { padding: 1.5rem 0; }
+    .edu-item span { color: var(--accent-strong); }
+
+    .contact {
+      padding: clamp(2.4rem, 6vw, 5rem);
+      border-top: 0;
+      border-left: 7px solid #ffad56;
+      background: #080d0a;
+      box-shadow: 14px 14px 0 color-mix(in srgb, var(--signal) 25%, transparent);
+    }
+    .contact::before {
+      content: "READY FOR THE NEXT DEPLOYMENT";
+      display: block;
+      margin-bottom: 1.4rem;
+      color: #70dc88;
+      font: 600 .7rem/1 "IBM Plex Mono", monospace;
+      letter-spacing: .09em;
+    }
+    .contact::after { color: rgba(112,220,136,.08); }
+    .contact .button { background: #70dc88; border-color: #70dc88; }
+    .contact .button:hover,
+    .contact .button:focus-visible { background: #a7efb7; border-color: #a7efb7; }
+    .contact .button.secondary:hover,
+    .contact .button.secondary:focus-visible { background: #172119; border-color: #70dc88; }
+
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .console { max-width: 650px; }
+      .project { grid-template-columns: 56px minmax(0, 1fr); }
+      .project-meta { grid-column: 2; }
+      .operating-loop { grid-template-columns: repeat(2, 1fr); }
+      .loop-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .loop-step:nth-child(4) { border-top: 1px solid var(--line); }
+      .loop-step:nth-child(2)::after { display: none; }
+    }
+
+    @media (max-width: 680px) {
+      body { background-size: 44px 100%; }
+      .hero { padding-top: 3.8rem; }
+      .console { box-shadow: 8px 9px 0 rgba(255,173,86,.14); }
+      .trust-strip::before { position: static; display: block; grid-column: 1; width: fit-content; }
+      .trust-item { padding-top: 1.2rem; }
+      .operating-loop { grid-template-columns: 1fr; }
+      .loop-step + .loop-step { border-left: 0; border-top: 1px solid var(--line); }
+      .loop-step::after { display: none; }
+      .section-head { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; padding: 1.5rem 1.25rem; box-shadow: 5px 5px 0 color-mix(in srgb, var(--line) 32%, transparent); }
+      .project-number { flex-direction: row; align-items: center; }
+      .project-meta { grid-column: 1; }
+      .skills-note { border-left-width: 4px; }
+      .contact { border-left-width: 5px; box-shadow: 7px 8px 0 color-mix(in srgb, var(--signal) 22%, transparent); }
+    }
+
     /* Linux-first opening sequence */
     body.intro-active { overflow: hidden; }
     .linux-intro {
@@ -1014,6 +1306,13 @@
       <div class="trust-item"><span>Mobility</span><strong>Open to relocation across Canada</strong></div>
     </div>
 
+    <div class="operating-loop" aria-label="Engineering workflow">
+      <div class="loop-step"><span>01 / DECLARE</span><strong>Provision</strong><small>Reusable infrastructure, defined as code</small></div>
+      <div class="loop-step"><span>02 / VERIFY</span><strong>Ship</strong><small>Tested changes through automated delivery</small></div>
+      <div class="loop-step"><span>03 / SIGNAL</span><strong>Observe</strong><small>Metrics, dashboards, and actionable alerts</small></div>
+      <div class="loop-step"><span>04 / LEARN</span><strong>Improve</strong><small>Runbooks, postmortems, and tighter feedback</small></div>
+    </div>
+
     <section id="work" aria-labelledby="work-title">
       <div class="section-head">
         <span class="section-index">01 / Selected work</span>
@@ -1027,6 +1326,7 @@
         <article class="project">
           <span class="project-number">01</span>
           <div>
+            <span class="project-kicker">Ship · test · observe</span>
             <h3>Multi-Market ETF Tracker</h3>
             <p>Containerized a Python and Flask service, provisioned Azure App Service infrastructure with Terraform, and built a GitHub Actions pipeline where eight mocked tests gate image builds. A local Prometheus and Grafana stack adds service metrics, dashboards, and Telegram alerting.</p>
             <div class="tags" aria-label="Technologies used">
@@ -1048,6 +1348,7 @@
         <article class="project">
           <span class="project-number">02</span>
           <div>
+            <span class="project-kicker">Provision · secure · repeat</span>
             <h3>Azure Multi-Region Infrastructure</h3>
             <p>Automated a three-region Azure deployment with Terraform <code>for_each</code>, reusable networking, subnet-level security rules, SSH key authentication, and Bash-based Apache provisioning on Ubuntu virtual machines.</p>
             <div class="tags" aria-label="Technologies used">
@@ -1069,6 +1370,7 @@
         <article class="project">
           <span class="project-number">03</span>
           <div>
+            <span class="project-kicker">Monitor · automate · respond</span>
             <h3>Blue Current Technologies</h3>
             <p>A Lambton College WIL project combining cloud operations with a Marine IoT scenario. Work included Prometheus alert thresholds, Grafana dashboards, alert triage and runbooks, IAM and RBAC reviews, infrastructure automation with Terraform and Ansible, wireless security audits, and hybrid-cloud architecture planning.</p>
             <div class="tags" aria-label="Technologies used">
@@ -1087,6 +1389,7 @@
         <article class="project">
           <span class="project-number">04</span>
           <div>
+            <span class="project-kicker">Harden · operate · learn</span>
             <h3>Hybrid Cloud Banking SaaS</h3>
             <p>Platform engineering capstone for a hybrid-cloud banking environment. The work covered IAM and RBAC hardening, service-health and API observability with Prometheus and Grafana, CI/CD maintenance, incident coordination, and structured postmortems.</p>
             <div class="tags" aria-label="Technologies used">
@@ -1314,7 +1617,7 @@
         if (reduceMotion) return;
 
         document.body.classList.add('motion-ready');
-        var targets = document.querySelectorAll('.section-head, .project, .credentials, .story-grid, .contact');
+        var targets = document.querySelectorAll('.operating-loop, .section-head, .project, .credentials, .story-grid, .contact');
 
       if (!('IntersectionObserver' in window)) {
         Array.prototype.forEach.call(targets, function (target) {

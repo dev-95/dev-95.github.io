@@ -1326,7 +1326,7 @@
 
 <span class="prompt">$</span> terraform plan
 <span class="dim">Plan:</span> <span class="ok">4 credentials</span> to add,
-      <span class="ok">4 projects</span> to review,
+      <span class="ok">5 projects</span> to review,
       <span class="ok">0 sponsorship</span> required.</pre>
       </aside>
     </header>
@@ -1357,6 +1357,28 @@
         <article class="project">
           <span class="project-number">01</span>
           <div>
+            <span class="project-kicker">Provision · scale · observe</span>
+            <h3>LLM Serving Platform on AWS EKS</h3>
+            <p>Open-source LLM (Qwen2.5-1.5B on llama.cpp) served on Kubernetes with autoscaling and observability, provisioned entirely with Terraform and Helm. A 10-minute k6 load test scaled the HPA from 1 to 3 pods across 3 nodes with 0 failed requests out of 202, peaking at 29.4 tokens/sec cluster-wide (p95 latency 25.13s, CPU-only inference). Prometheus and Grafana tracked tokens/sec, request queueing, pod count, CPU and memory. Stack was fully destroyed afterwards and cleanup verified.</p>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">AWS EKS</span><span class="tag">Terraform</span><span class="tag">Helm</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">llama.cpp</span><span class="tag">HPA</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">k6</span>
+            </div>
+          </div>
+          <aside class="project-meta">
+            <dl>
+              <div><dt>Load test</dt><dd>10-min k6 · 0 of 202 requests failed</dd></div>
+              <div><dt>Scaling</dt><dd>HPA 1 → 3 pods across 3 nodes</dd></div>
+              <div><dt>Throughput</dt><dd>29.4 tokens/sec peak · p95 25.13s · CPU-only</dd></div>
+            </dl>
+            <a class="project-link" href="https://github.com/dev-95/llm-serving-eks" target="_blank" rel="noreferrer">View on GitHub
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </aside>
+        </article>
+
+        <article class="project">
+          <span class="project-number">02</span>
+          <div>
             <span class="project-kicker">Ship · test · observe</span>
             <h3>Multi-Market ETF Tracker</h3>
             <p>Containerized a Python and Flask service, provisioned Azure App Service infrastructure with Terraform, and built a GitHub Actions pipeline where eight mocked tests gate image builds. A local Prometheus and Grafana stack adds service metrics, dashboards, and Telegram alerting.</p>
@@ -1377,7 +1399,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">02</span>
+          <span class="project-number">03</span>
           <div>
             <span class="project-kicker">Provision · secure · repeat</span>
             <h3>Azure Multi-Region Infrastructure</h3>
@@ -1399,7 +1421,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">03</span>
+          <span class="project-number">04</span>
           <div>
             <span class="project-kicker">Monitor · automate · respond</span>
             <h3>Blue Current Technologies <span class="project-context">(Lambton College WIL Project)</span></h3>
@@ -1419,7 +1441,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">04</span>
+          <span class="project-number">05</span>
           <div>
             <span class="project-kicker">Harden · operate · learn</span>
             <h3>Hybrid Cloud Banking SaaS</h3>

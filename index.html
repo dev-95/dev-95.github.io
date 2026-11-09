@@ -309,7 +309,7 @@
 
     .credentials {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
     }
     .credential {
@@ -644,6 +644,7 @@
     .credential:nth-child(2)::before { content: "02"; }
     .credential:nth-child(3)::before { content: "03"; }
     .credential:nth-child(4)::before { content: "04"; }
+    .credential:nth-child(5)::before { content: "05"; }
     .credential::after {
       content: "";
       position: absolute;
@@ -758,6 +759,7 @@
       body.motion-ready .credentials.reveal.is-visible .credential:nth-child(2)::after { transition-delay: .28s; }
       body.motion-ready .credentials.reveal.is-visible .credential:nth-child(3)::after { transition-delay: .36s; }
       body.motion-ready .credentials.reveal.is-visible .credential:nth-child(4)::after { transition-delay: .44s; }
+      body.motion-ready .credentials.reveal.is-visible .credential:nth-child(5)::after { transition-delay: .52s; }
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -780,7 +782,8 @@
       .hero { grid-template-columns: 1fr; }
       .console { max-width: 640px; transform: rotate(.6deg); margin-top: 1rem; }
       .project { grid-template-columns: 52px minmax(0, 1fr); }
-      .credential + .credential:nth-child(3) { border-left: 0; }
+      .credential + .credential:nth-child(3),
+      .credential + .credential:nth-child(5) { border-left: 0; }
       .credential:nth-child(n+3) { border-top: 1px solid var(--line); }
     }
 
@@ -1050,7 +1053,12 @@
     .credential::after { background: var(--accent); }
     .credential:nth-child(2n)::after { background: var(--signal); }
     .credential .issuer { max-width: 70%; }
-    .credential h3 { margin-top: 1.5rem; font-size: 1.18rem; }
+    .credential h3 { margin-top: 1.5rem; font-size: 1.18rem; hyphens: auto; }
+    .credential { min-width: 0; }
+    @media (min-width: 921px) and (max-width: 1180px) {
+      .credential { padding: 1.25rem; }
+      .credential h3 { font-size: 1.02rem; }
+    }
 
     .story-grid > p {
       position: relative;
@@ -1306,7 +1314,7 @@
         <div class="hero-proof" aria-label="Project proof points">
           <div class="proof-point"><strong>3 regions</strong><span>One Terraform pattern</span></div>
           <div class="proof-point"><strong>8 tests</strong><span>Gate every image build</span></div>
-          <div class="proof-point"><strong>4 certs</strong><span>Azure · AWS · Terraform</span></div>
+          <div class="proof-point"><strong>5 certs</strong><span>Azure · AWS · Terraform</span></div>
         </div>
       </div>
 
@@ -1325,7 +1333,7 @@
 <span class="key">code:</span> [python, bash]
 
 <span class="prompt">$</span> terraform plan
-<span class="dim">Plan:</span> <span class="ok">4 credentials</span> to add,
+<span class="dim">Plan:</span> <span class="ok">5 credentials</span> to add,
       <span class="ok">5 projects</span> to review,
       <span class="ok">0 sponsorship</span> required.</pre>
       </aside>
@@ -1488,12 +1496,13 @@
       <div class="section-head">
         <span class="section-index">03 / Credentials</span>
         <div>
-          <h2 id="credentials-title">Four certifications across cloud, infrastructure, and AI.</h2>
+          <h2 id="credentials-title">Five certifications across cloud, infrastructure, and AI.</h2>
         </div>
       </div>
       <div class="credentials">
         <article class="credential"><span class="issuer">Microsoft</span><h3>Azure Administrator Associate</h3><span class="date">AZ-104 · MAY 2026</span></article>
         <article class="credential"><span class="issuer">HashiCorp</span><h3>Terraform Associate</h3><span class="date">004 · JUN 2026</span></article>
+        <article class="credential"><span class="issuer">Amazon Web Services</span><h3>AWS Certified Cloud Practitioner</h3><span class="date">CLF-C02 · NOV 2026</span></article>
         <article class="credential"><span class="issuer">Amazon Web Services</span><h3>AWS Certified AI Practitioner</h3><span class="date">AIF-C01 · SEP 2026</span></article>
         <article class="credential"><span class="issuer">Microsoft</span><h3>Azure Fundamentals</h3><span class="date">AZ-900 · SEP 2025</span></article>
       </div>

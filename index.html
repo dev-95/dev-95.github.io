@@ -1018,6 +1018,7 @@
     .project-meta { background: var(--surface-2); border: 0; }
     .project-meta div + div { border-color: color-mix(in srgb, var(--line) 75%, transparent); }
     .project-link { margin-top: .45rem; }
+    .project-link + .project-link { margin-left: 1rem; }
 
     .skills-layout { grid-template-columns: minmax(270px, .55fr) minmax(0, 1.45fr); }
     .skills-note {
@@ -1334,7 +1335,7 @@
 
 <span class="prompt">$</span> terraform plan
 <span class="dim">Plan:</span> <span class="ok">5 credentials</span> to add,
-      <span class="ok">5 projects</span> to review,
+      <span class="ok">6 projects</span> to review,
       <span class="ok">0 sponsorship</span> required.</pre>
       </aside>
     </header>
@@ -1365,6 +1366,33 @@
         <article class="project">
           <span class="project-number">01</span>
           <div>
+            <span class="project-kicker">Detect · contain · undo</span>
+            <h3>CloudTripwire</h3>
+            <p>An open-source safety net that runs inside your own AWS account and stops surprise bills from forgotten resources and leaked keys.</p>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">AWS Lambda</span><span class="tag">EventBridge</span><span class="tag">DynamoDB</span><span class="tag">IAM</span><span class="tag">Terraform</span><span class="tag">Python</span><span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+          <aside class="project-meta">
+            <dl>
+              <div><dt>Sweep</dt><dd>Daily sweep across 17 regions with 6 detectors, each finding priced per month</dd></div>
+              <div><dt>Kill switch</dt><dd>Leaked-key kill switch: deactivated a canary key and stopped an instance across 17 regions in 19 seconds (tested live)</dd></div>
+              <div><dt>Routing</dt><dd>Cross-region EventBridge forwarding, because AWS only sends leaked-key events to us-east-1</dd></div>
+              <div><dt>Safety</dt><dd>Stop, never delete: every action has a one-line undo; least-privilege IAM enforced by a CI guard</dd></div>
+              <div><dt>Tests</dt><dd>252 unit tests, tagged release v0.1.0</dd></div>
+            </dl>
+            <a class="project-link" href="https://github.com/dev-95/cloudtripwire" target="_blank" rel="noreferrer">GitHub
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <a class="project-link" href="https://github.com/dev-95/cloudtripwire/releases/tag/v0.1.0" target="_blank" rel="noreferrer">Release
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </aside>
+        </article>
+
+        <article class="project">
+          <span class="project-number">02</span>
+          <div>
             <span class="project-kicker">Provision · scale · observe</span>
             <h3>LLM Serving Platform on AWS EKS</h3>
             <p>Open-source LLM (Qwen2.5-1.5B on llama.cpp) served on Kubernetes with autoscaling and observability, provisioned entirely with Terraform and Helm. A 10-minute k6 load test scaled the HPA from 1 to 3 pods across 3 nodes with 0 failed requests out of 202, peaking at 29.4 tokens/sec cluster-wide (p95 latency 25.13s, CPU-only inference). Prometheus and Grafana tracked tokens/sec, request queueing, pod count, CPU and memory. Stack was fully destroyed afterwards and cleanup verified.</p>
@@ -1385,7 +1413,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">02</span>
+          <span class="project-number">03</span>
           <div>
             <span class="project-kicker">Ship · test · observe</span>
             <h3>Multi-Market ETF Tracker</h3>
@@ -1407,7 +1435,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">03</span>
+          <span class="project-number">04</span>
           <div>
             <span class="project-kicker">Provision · secure · repeat</span>
             <h3>Azure Multi-Region Infrastructure</h3>
@@ -1429,7 +1457,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">04</span>
+          <span class="project-number">05</span>
           <div>
             <span class="project-kicker">Monitor · automate · respond</span>
             <h3>Blue Current Technologies <span class="project-context">(Lambton College WIL Project)</span></h3>
@@ -1449,7 +1477,7 @@
         </article>
 
         <article class="project">
-          <span class="project-number">05</span>
+          <span class="project-number">06</span>
           <div>
             <span class="project-kicker">Harden · operate · learn</span>
             <h3>Hybrid Cloud Banking SaaS</h3>

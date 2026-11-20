@@ -19,6 +19,7 @@
   <style>
     :root {
       color-scheme: light dark;
+      --page-w: calc(100vw - var(--sbw, 0px)); /* 100vw minus the vertical scrollbar */
       --bg: #edf1eb;
       --surface: #f9fbf7;
       --surface-2: #dfe7dd;
@@ -434,9 +435,9 @@
 
     .hero {
       position: relative;
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      padding: clamp(5rem, 8vw, 8rem) max(1rem, calc((100vw - 1180px) / 2)) clamp(4rem, 7vw, 6.5rem);
+      width: var(--page-w);
+      margin-left: calc(50% - var(--page-w) / 2);
+      padding: clamp(5rem, 8vw, 8rem) max(1rem, calc((var(--page-w) - 1180px) / 2)) clamp(4rem, 7vw, 6.5rem);
       grid-template-columns: minmax(0, 1.3fr) minmax(350px, .7fr);
       overflow: hidden;
       isolation: isolate;
@@ -789,8 +790,8 @@
 
     @media (max-width: 680px) {
       .hero {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
+        width: var(--page-w);
+        margin-left: calc(50% - var(--page-w) / 2);
         padding: 4rem .625rem 3rem;
       }
       h1 { font-size: clamp(3.2rem, 16vw, 4.8rem); }
@@ -1018,7 +1019,6 @@
     .project-meta { background: var(--surface-2); border: 0; }
     .project-meta div + div { border-color: color-mix(in srgb, var(--line) 75%, transparent); }
     .project-link { margin-top: .45rem; }
-    .project-link + .project-link { margin-left: 1rem; }
 
     .skills-layout { grid-template-columns: minmax(270px, .55fr) minmax(0, 1.45fr); }
     .skills-note {
@@ -1124,6 +1124,7 @@
       .project-number { flex-direction: row; align-items: center; }
       .project-meta { grid-column: 1; }
       .skills-note { border-left-width: 4px; }
+      .skills-layout, .skill-row { grid-template-columns: 1fr; } /* re-assert: later base rules overrode the earlier mobile ones */
       .contact { border-left-width: 5px; box-shadow: 7px 8px 0 color-mix(in srgb, var(--signal) 22%, transparent); }
     }
 
@@ -1313,8 +1314,8 @@
           <a class="button secondary" href="Devesh_Chowdary_Chalasani.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
         <div class="hero-proof" aria-label="Project proof points">
-          <div class="proof-point"><strong>3 regions</strong><span>One Terraform pattern</span></div>
-          <div class="proof-point"><strong>8 tests</strong><span>Gate every image build</span></div>
+          <div class="proof-point"><strong>17 regions</strong><span>Scanned daily</span></div>
+          <div class="proof-point"><strong>252 tests</strong><span>On every push</span></div>
           <div class="proof-point"><strong>5 certs</strong><span>Azure · AWS · Terraform</span></div>
         </div>
       </div>
@@ -1368,23 +1369,18 @@
           <div>
             <span class="project-kicker">Detect · contain · undo</span>
             <h3>CloudTripwire</h3>
-            <p>An open-source safety net that runs inside your own AWS account and stops surprise bills from forgotten resources and leaked keys.</p>
+            <p>A Terraform module that installs into your own AWS account. A daily Lambda sweep finds idle resources across every region and prices each one, TTL tags stop test instances when their time is up, and a kill switch reacts to AWS Health leaked-key events by deactivating the key and stopping anything launched in the last hour. AWS only sends those events to us-east-1, so EventBridge forwards them to the home region. It stops things but never deletes them, and every action comes with a one-line undo.</p>
             <div class="tags" aria-label="Technologies used">
               <span class="tag">AWS Lambda</span><span class="tag">EventBridge</span><span class="tag">DynamoDB</span><span class="tag">IAM</span><span class="tag">Terraform</span><span class="tag">Python</span><span class="tag">GitHub Actions</span>
             </div>
           </div>
           <aside class="project-meta">
             <dl>
-              <div><dt>Sweep</dt><dd>Daily sweep across 17 regions with 6 detectors, each finding priced per month</dd></div>
-              <div><dt>Kill switch</dt><dd>Leaked-key kill switch: deactivated a canary key and stopped an instance across 17 regions in 19 seconds (tested live)</dd></div>
-              <div><dt>Routing</dt><dd>Cross-region EventBridge forwarding, because AWS only sends leaked-key events to us-east-1</dd></div>
-              <div><dt>Safety</dt><dd>Stop, never delete: every action has a one-line undo; least-privilege IAM enforced by a CI guard</dd></div>
-              <div><dt>Tests</dt><dd>252 unit tests, tagged release v0.1.0</dd></div>
+              <div><dt>Sweep</dt><dd>17 regions · 6 detectors · priced per month</dd></div>
+              <div><dt>Kill switch</dt><dd>Canary key disabled + instance stopped in 19s</dd></div>
+              <div><dt>Tests</dt><dd>252 unit tests · release v0.1.0</dd></div>
             </dl>
-            <a class="project-link" href="https://github.com/dev-95/cloudtripwire" target="_blank" rel="noreferrer">GitHub
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
-            </a>
-            <a class="project-link" href="https://github.com/dev-95/cloudtripwire/releases/tag/v0.1.0" target="_blank" rel="noreferrer">Release
+            <a class="project-link" href="https://github.com/dev-95/cloudtripwire" target="_blank" rel="noreferrer">Review repository
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
             </a>
           </aside>
@@ -1578,6 +1574,15 @@
   </main>
 
   <script>
+    (function () {
+      // ponytail: CSS has no "viewport minus scrollbar" unit, so measure it for the full-bleed hero
+      var root = document.documentElement;
+      function setScrollbarWidth() { root.style.setProperty('--sbw', (window.innerWidth - root.clientWidth) + 'px'); }
+      setScrollbarWidth();
+      window.addEventListener('resize', setScrollbarWidth);
+      if ('ResizeObserver' in window) new ResizeObserver(setScrollbarWidth).observe(document.body);
+    })();
+
     (function () {
       var intro = document.getElementById('linux-intro');
       var output = document.getElementById('boot-output');
